@@ -1,0 +1,8 @@
+[default]
+path = "/home/natanel/wallpapers/"
+duration = "30m"
+
+[eDP-1]
+path = "/home/natanel/wallpapers/wallhaven-28l69y_2560x1440.png"
+apply-shadow = true
+sorting = "ascending"
