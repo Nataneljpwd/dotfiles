@@ -22,3 +22,4 @@ require('mini.deps').setup()
 
 require('colorscheme.cyberdream')
 require('plugins.treesitter')
+require('plugins.pick')

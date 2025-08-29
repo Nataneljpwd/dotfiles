@@ -13,7 +13,6 @@ set $menu bemenu
 # Font preferenceds
 font pango: Hack Nerd Font Mono 16
 
-default_border none
 
 ### Idle configuration
 exec swayidle -w \
@@ -23,12 +22,10 @@ exec swayidle -w \
 
 # Cosmetic configurations
 
-gaps outer 15
+gaps outer 10
+gaps inner 10
 
-for_window [all] title_window_icon on
-for_window [all] title_window_icon padding 6px
-
-title_align center
+default_border none
 
 bindsym $mod+z exec ~/scripts/change_bg.sh
 
