@@ -4,6 +4,7 @@ vim.opt.wrap = true
 vim.opt.tabstop	= 8
 vim.opt.shiftwidth = 8
 
+vim.opt.completeopt = {"menu", "menuone", "noselect"}
 
 vim.opt.wildignore = { '*.o','*.a','__pycache__', '*.pyc','*.class'}
 

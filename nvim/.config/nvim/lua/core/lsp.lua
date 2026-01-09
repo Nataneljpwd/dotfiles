@@ -1,9 +1,10 @@
 vim.lsp.enable({
 	"gopls",
 	"lua_ls",
-	"pyright",
 	"ruff",
+	"pyright",
 	"rust-analyzer",
+	"ruby-lsp",
 })
 
 vim.diagnostic.config({
