@@ -1,9 +1,7 @@
-MiniDeps = require('mini.deps')
+local add = vim.pack.add
 
-local add = MiniDeps.add
+add({ 'https://github.com/scottmckendry/cyberdream.nvim', })
 
-add({source = 'scottmckendry/cyberdream.nvim'})
+require('cyberdream').setup({ transparent = true, cache = true })
 
-require('cyberdream').setup({transparent=true, cache=true})
-
-vim.cmd[[colorscheme cyberdream]]
+vim.cmd [[colorscheme cyberdream]]

@@ -1,6 +1,4 @@
-MiniDeps = require('mini.deps')
-
-local add = MiniDeps.add
+local add = vim.pack.add
 
 add({ source = 'stevearc/oil.nvim' })
 

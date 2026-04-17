@@ -1,10 +1,8 @@
-MiniDeps = require('mini.deps')
-
-local add = MiniDeps.add
+local add = vim.pack.add
 
 add(
 	{
-		source="nvim-treesitter/nvim-treesitter",
+		src = "nvim-treesitter/nvim-treesitter",
 		version = false,
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
@@ -58,7 +56,6 @@ require("nvim-treesitter.configs").setup({
 			lookahead = true,
 
 			keymaps = {
-				-- You can use the capture groups defined in textobjects.scm
 				["af"] = { query = "@function.outer", desc = "around a function" },
 				["if"] = { query = "@function.inner", desc = "inner part of a function" },
 				["ac"] = { query = "@class.outer", desc = "around a class" },
@@ -71,12 +68,12 @@ require("nvim-treesitter.configs").setup({
 				["ip"] = { query = "@parameter.inner", desc = "inside a parameter" },
 			},
 			selection_modes = {
-				["@parameter.outer"] = "v",   -- charwise
-				["@parameter.inner"] = "v",   -- charwise
-				["@function.outer"] = "v",    -- charwise
+				["@parameter.outer"] = "v", -- charwise
+				["@parameter.inner"] = "v", -- charwise
+				["@function.outer"] = "v", -- charwise
 				["@conditional.outer"] = "V", -- linewise
-				["@loop.outer"] = "V",        -- linewise
-				["@class.outer"] = "<c-v>",   -- blockwise
+				["@loop.outer"] = "V", -- linewise
+				["@class.outer"] = "<c-v>", -- blockwise
 			},
 			include_surrounding_whitespace = false,
 		},

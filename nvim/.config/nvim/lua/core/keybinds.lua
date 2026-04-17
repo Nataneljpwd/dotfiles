@@ -14,4 +14,3 @@ vim.keymap.set('n', '<C-L>', '<C-W>l')
 vim.keymap.set('n', '<C-Q>', '<C-W>c')
 
 vim.keymap.set('n', '<C-S>', ':split<CR>')
-
