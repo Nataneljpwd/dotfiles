@@ -4,7 +4,7 @@ require('core.autocommands')
 require('core.lsp')
 
 require('colorscheme.cyberdream')
--- require('plugins.treesitter')
+require('plugins.treesitter')
 -- require('plugins.pick')
 -- require('plugins.oil')
 -- require('plugins.autoclose')

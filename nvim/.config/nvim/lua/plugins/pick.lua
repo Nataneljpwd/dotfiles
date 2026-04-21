@@ -1,6 +1,6 @@
-local add = vim.pack.add
+local add = require(".package").add
 
-add({ 'https://github.com/nvim-mini/mini.pick' })
+add({ 'nvim-mini/mini.pick' })
 
 local win_config = function()
 	local height = math.floor(0.618 * vim.o.lines)

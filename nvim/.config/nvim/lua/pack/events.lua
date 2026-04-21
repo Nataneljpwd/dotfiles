@@ -1,2 +1,0 @@
-function event(data)
-end
