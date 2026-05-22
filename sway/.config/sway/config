@@ -11,7 +11,7 @@ set $term kitty
 set $menu bemenu
 
 # Font preferenceds
-font pango: Hack Nerd Font Mono 16
+font pango: MesloLGS NF 16
 
 
 ### Idle configuration
@@ -19,11 +19,13 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
-
+	
 # Cosmetic configurations
 
-gaps outer 10
-gaps inner 10
+gaps outer 8
+gaps inner 8
+
+exec_always waybar
 
 default_border none
 
@@ -204,21 +206,5 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
-#
-# Status Bar:
-#
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
 
 include /etc/sway/config.d/*
