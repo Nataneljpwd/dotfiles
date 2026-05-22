@@ -1,6 +1,6 @@
-local add = vim.pack.add
+local add = require("packages").add
 
-add({ source = 'stevearc/oil.nvim' })
+add({'stevearc/oil.nvim'})
 
 require('oil').setup({
 	keymaps = {

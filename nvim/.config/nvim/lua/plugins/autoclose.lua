@@ -1,5 +1,5 @@
-local add = vim.pack.add
+local add = require("packages").add
 
-add({ source = 'm4xshen/autoclose.nvim' })
+add({ src = 'm4xshen/autoclose.nvim' })
 
 require('autoclose').setup()

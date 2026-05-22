@@ -1,4 +1,4 @@
-local add = require(".package").add
+local add = require("packages").add
 
 add({ 'nvim-mini/mini.pick' })
 

@@ -1,12 +1,14 @@
-local git_config = require("package.git")
-local git_prefix ="^(https?://|ssh://|git@)"
 local M = {}
+
+local git_config = require("packages.git")
+local git_prefix = "^(https?://|ssh://|git@)"
 
 local function prepend_git_prefix(spec)
 	if type(spec) == "string" then
-		if spec:sub(1, )
+		if not spec:match(git_prefix) then
 
-		return string.format(git_config.url_format, spec)
+			return string.format(git_config.url_format, spec)
+		end
 	elseif type(spec) == "table" then
 		if vim.isarray(spec) then
 			return vim.tbl_map(
@@ -25,7 +27,13 @@ local function prepend_git_prefix(spec)
 end
 
 M.add = function(spec, opts)
-	vim.pack.add(prepend_git_prefix(spec), opts)
+	spec = prepend_git_prefix(spec)
+
+	if not vim.isarray(spec) then
+		spec = { spec }
+	end
+
+	vim.pack.add(spec, opts)
 end
 
 local plugins_augroup = vim.api.nvim_create_augroup("plugins", { clear = true })

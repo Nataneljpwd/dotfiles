@@ -1,5 +1,5 @@
-local add = require(".package").add
-local run_on_event = require(".package").run_on_event
+local add = require("packages").add
+local run_on_event = require("packages").run_on_event
 
 add(
 	{
@@ -16,7 +16,7 @@ add(
 
 run_on_event({ "BufReadPost", "BufNewFile" }, {
 	callback = function()
-		require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter").setup({
 			sync_install = false,
 			modules = {},
 			highlight = {
