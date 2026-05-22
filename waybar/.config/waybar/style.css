@@ -1,0 +1,8 @@
+* { font-family: "MesloLGS NF"; font-size: 14px; border: none; }
+window#waybar { background: transparent; }
+#workspaces, #clock, #custom-network, #custom-bluetooth, #battery {
+    background: #11111b; color: #cdd6f4; padding: 0 15px; border-radius: 10px; border: 1px solid #313244;
+}
+#workspaces button.focused { color: #89b4fa; }
+#clock { color: #89b4fa; font-weight: bold; }
+#battery.charging { color: #a6e3a1; }

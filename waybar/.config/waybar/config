@@ -1,0 +1,15 @@
+{
+    "layer": "top", "position": "top", "height": 38, "margin": "5 10 0 10", "spacing": 10,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/network", "custom/bluetooth", "battery"],
+    "clock": { "format": "󰃭 {:%H:%M}", "tooltip-format": "{:%a, %d %b}" },
+    "battery": {
+        "states": { "warning": 25, "critical": 10 },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "custom/network": { "exec": "~/scripts/waybar-net.sh", "interval":120, "on-click": "~/scripts/menu-wifi.sh" },
+    "custom/bluetooth": { "exec": "~/scripts/waybar-bt.sh", "interval": 60, "on-click": "~/scripts/menu-bluetooth.sh" }
+}
