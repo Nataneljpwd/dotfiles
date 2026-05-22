@@ -1,15 +1,53 @@
 {
-    "layer": "top", "position": "top", "height": 38, "margin": "5 10 0 10", "spacing": 10,
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "fixed-center": true,
+    "spacing": 0,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/network", "custom/bluetooth", "battery"],
-    "clock": { "format": "󰃭 {:%H:%M}", "tooltip-format": "{:%a, %d %b}" },
+    "modules-right": ["custom/network", "custom/bluetooth", "battery", "tray"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": "󱑊 {:%H:%M  |  %a %d %b}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"locale": "C"
+    },
+
     "battery": {
-        "states": { "warning": 25, "critical": 10 },
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
         "format": "{icon} {capacity}%",
         "format-charging": "󱐋 {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-plugged": " {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 60
     },
-    "custom/network": { "exec": "~/scripts/waybar-net.sh", "interval":120, "on-click": "~/scripts/menu-wifi.sh" },
-    "custom/bluetooth": { "exec": "~/scripts/waybar-bt.sh", "interval": 60, "on-click": "~/scripts/menu-bluetooth.sh" }
+
+    "custom/network": {
+        "exec": "$HOME/scripts/net_status.sh",
+        "return-type": "json",
+        "interval": 60,
+        "on-click": "$HOME/scripts/net_menu.sh"
+    },
+
+    "custom/bluetooth": {
+        "exec": "$HOME/scripts/bt_status.sh",
+        "return-type": "json",
+        "interval": 60,
+        "on-click": "$HOME/scripts/bt_menu.sh"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    }
 }

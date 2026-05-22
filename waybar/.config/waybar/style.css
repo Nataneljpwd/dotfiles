@@ -1,8 +1,90 @@
-* { font-family: "MesloLGS NF"; font-size: 14px; border: none; }
-window#waybar { background: transparent; }
-#workspaces, #clock, #custom-network, #custom-bluetooth, #battery {
-    background: #11111b; color: #cdd6f4; padding: 0 15px; border-radius: 10px; border: 1px solid #313244;
+/* Reset and Font Setup */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "MesloLGS NF";
+    font-size: 16px;
 }
-#workspaces button.focused { color: #89b4fa; }
-#clock { color: #89b4fa; font-weight: bold; }
-#battery.charging { color: #a6e3a1; }
+
+/* Background is invisible to allow "floating" look */
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Individual Floating Pills */
+#workspaces,
+#clock,
+#custom-network,
+#custom-bluetooth,
+#battery,
+#tray {
+    background-color: #1a1b26;
+    color: #c0caf5;
+    border-radius: 16px;
+    margin: 5px 4px;
+    padding: 2px 16px;
+}
+
+/* Workspace Pill */
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #c0caf5;
+    background: transparent;
+    border-radius: 12px;
+}
+
+#workspaces button.focused {
+    background-color: #33467c;
+    color: #7aa2f7;
+}
+
+/* Clock - Ensure it's bold and clear */
+#clock {
+    font-weight: bold;
+    color: #c0caf5;
+}
+
+/* Battery Logic: Visual Feedback for Power */
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #f7768e; /* Red/Orange to show active charging */
+    border: 1px solid #f7768e;
+}
+
+#battery.plugged {
+    color: #7aa2f7; /* Blue to show connected but full */
+}
+
+#battery.warning { color: #e0af68; }
+#battery.critical { color: #f7768e; }
+
+/* Network & Bluetooth */
+#custom-network { color: #7aa2f7; }
+
+#custom-bluetooth.connected {
+    color: #bb9af7;
+    border: 1px solid #bb9af7;
+}
+
+#custom-bluetooth.disabled {
+    color: #565f89;
+}
+/* Tray Styling - Makes it look like the other pills */
+#tray {
+    padding: 2px 12px;
+}
+
+#tray menu {
+    background-color: #1a1b26;
+    color: #c0caf5;
+}
+
+/* If a module has no content (e.g. Battery on Desktop), 
+   Waybar natively won't render the background for that ID. */

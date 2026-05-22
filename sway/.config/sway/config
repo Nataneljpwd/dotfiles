@@ -28,15 +28,12 @@ gaps outer 5
 gaps inner 3
 
 
-bindsym $mod+d exec $scripts/menu-apps.sh
-bindsym $mod+y exec $scripts/menu-profiles.sh
-bindsym $mod+c exec $scripts/menu-bluetooth.sh
-bindsym $mod+n exec $scripts/menu-wifi.sh
-
-exec_always pkill waybar; waybar
+bindsym $mod+d exec $scripts/menu.sh
+bindsym $mod+Shift+b exec $scripts/bt_menu.sh
+bindsym $mod+Shift+n exec $scripts/net_menu.sh
+bindsym $mod+Shift+y exec $scripts/profile_menu.sh
 
 # This forces the bemenu window to be centered and floating if the flag fails
-for_window [app_id="bemenu"] floating enable, border pixel 2, move position center
 
 # Start Bar
 bar { swaybar_command waybar }
