@@ -26,15 +26,11 @@ window#waybar {
 }
 
 /* Workspace Pill */
-#workspaces {
-    padding: 0 4px;
-}
 
 #workspaces button {
-    padding: 0 8px;
     color: #c0caf5;
     background: transparent;
-    border-radius: 12px;
+    border-radius: 50%;
 }
 
 #workspaces button.focused {

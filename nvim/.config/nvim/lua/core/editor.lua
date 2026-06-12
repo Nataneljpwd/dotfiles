@@ -8,5 +8,4 @@ vim.opt.completeopt = {"menu", "menuone", "noselect"}
 
 vim.opt.wildignore = { '*.o','*.a','__pycache__', '*.pyc','*.class'}
 
-
 vim.g.mapleader = ' '

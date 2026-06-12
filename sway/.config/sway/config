@@ -38,6 +38,8 @@ bindsym $mod+Shift+y exec $scripts/profile_menu.sh
 # Start Bar
 bar { swaybar_command waybar }
 
+exec waybar
+
 default_border none
 
 bindsym $mod+z exec ~/scripts/change_bg.sh
