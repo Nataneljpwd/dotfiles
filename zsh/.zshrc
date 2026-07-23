@@ -19,7 +19,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Only enabled if the theme is installed to avoid the powerlevel10k theme not found
+[[ -f "powerlevel10k/powerlevel10k" ]] && ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export WLR_LIBSEAT_BACKEND=seatd
 
