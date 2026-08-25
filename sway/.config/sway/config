@@ -28,6 +28,10 @@ gaps outer 5
 gaps inner 3
 output eDP-1 mode 2560x1600@60Hz scale 1.3
 
+input "type:keyboard" {
+	xkb_layout "us,il"
+	xkb_options "grp:caps_toggle"
+}
 
 bindsym $mod+d exec $scripts/menu.sh
 bindsym $mod+Shift+b exec $scripts/bt_menu.sh
